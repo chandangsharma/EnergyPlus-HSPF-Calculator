@@ -672,18 +672,6 @@ If (IsEmpty(ThisWorkbook.Sheets("HSPF").Cells(RowNum, CoolingCapacity_ColumnNum)
     CheckInputs = False
 End If
 
-If LastHP = False Then
-  If (ThisWorkbook.Sheets("HSPF").Cells(RowNum, CoolingCapacity_ColumnNum).Value * ConvFromSIToIP / 1000 > 65) Then
-    CheckInputs = False
-  Else
-'    If (ThisWorkbook.Sheets("HSPF").Cells(RowNum, CoolingCapacity_ColumnNum).Value * ConvFromSIToIP / 1000 < 30) Then
-'      ThisWorkbook.Sheets("HSPF").Cells(RowNum, DesiredHSPF_ColumnNum).Value = 7.7
-'    Else
-'      ThisWorkbook.Sheets("HSPF").Cells(RowNum, DesiredHSPF_ColumnNum).Value = 7.4
-'    End If
-  End If
-End If
-
 If (CheckInputs = False And LastHP = False) Then
   ThisWorkbook.Sheets("HSPF").Cells(RowNum, DesiredHSPF_ColumnNum).Value = "NA"
   ThisWorkbook.Sheets("HSPF").Cells(RowNum, CalculatedHSPF_ColumnNum).Value = "--"
